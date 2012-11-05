@@ -1,0 +1,7 @@
+archer_clickatell:
+    message:
+        blank: Please enter a message
+        long: "[-Inf,Inf]The message is too long"
+    tophone:
+        blank: Please enter an phone number
+        long: "[-Inf,Inf]The phone number is too long"

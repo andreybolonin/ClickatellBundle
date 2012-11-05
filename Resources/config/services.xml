@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="clickatell.http" class="Archer\ClickatellBundle\Service\ClickatellHttp">
+            <!--<argument type="service" id="service_container" />-->
+            <argument type="string">%clickatell.user%</argument>
+            <argument type="string">%clickatell.password%</argument>
+            <argument type="string">%clickatell.api_id%</argument>
+        </service>
+    </services>
+</container>

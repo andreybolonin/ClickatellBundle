@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="Archer\ClickatellBundle\Model\Message">
+
+        <property name="text">
+            <constraint name="NotBlank">
+                <option name="message">archer_clickatell.message.blank</option>
+                <option name="groups">
+                    <value>sendMessage</value>
+                    <value>replyMessage</value>
+                    <value>receiveMessage</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">5599</option>
+                <option name="message">archer_clickatell.message.long</option>
+                <option name="groups">
+                    <value>sendMessage</value>
+                    <value>replyMessage</value>
+                    <value>receiveMessage</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="toPhone">
+            <constraint name="NotBlank">
+                <option name="message">archer_clickatell.tophone.blank</option>
+                <option name="groups">
+                    <value>sendMessage</value>
+                    <value>receiveMessage</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">254</option>
+                <option name="message">archer_clickatell.tophone.long</option>
+                <option name="groups">
+                    <value>sendMessage</value>
+                    <value>receiveMessage</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="fromPhone">
+            <constraint name="NotBlank">
+                <option name="message">archer_clickatell.tophone.blank</option>
+                <option name="groups">
+                    <value>receiveMessage</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">254</option>
+                <option name="message">archer_clickatell.tophone.long</option>
+                <option name="groups">
+                    <value>receiveMessage</value>
+                </option>
+            </constraint>
+        </property>
+    </class>
+
+</constraint-mapping>

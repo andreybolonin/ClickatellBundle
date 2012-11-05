@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                  http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="Archer\ClickatellBundle\Entity\Message">
+
+        <field name="text" column="text" type="string" length="5600" />
+
+        <field name="toPhone" column="tophone" type="string" length="255" />
+
+        <field name="apiMsgId" column="apimsgid" type="string" length="255" unique="true" />
+
+        <field name="cliMsgId" column="climsgid" type="string" length="255" unique="true" />
+
+        <field name="fromPhone" column="fromphone" type="string" length="255" nullable="true" />
+
+        <field name="status" column="status" type="string" length="255" />
+
+        <field name="incoming" column="incoming" type="smallint" />
+
+        <field name="timestamp" column="timestamp" type="integer" nullable="true" />
+
+        <field name="createdAt" column="created_at" type="datetime" />
+
+    </mapped-superclass>
+
+</doctrine-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="clickatell.reply_message.form" factory-method="createNamed" factory-service="form.factory" class="Symfony\Component\Form\Form">
+            <argument>%clickatell.reply_message.form.name%</argument>
+            <argument>%clickatell.reply_message.form.type%</argument>
+            <argument>null</argument>
+            <argument type="collection">
+                <argument key="validation_groups">%clickatell.reply_message.form.validation_groups%</argument>
+                <argument key="csrf_protection">%clickatell.reply_message.form.csrf_protection%</argument>
+            </argument>
+        </service>
+
+        <service id="clickatell.reply_message.form.type" class="Archer\ClickatellBundle\Form\Type\ReplyMessageFormType">
+            <tag name="form.type" alias="clickatell_reply_message" />
+            <argument>%clickatell.message_class%</argument>
+        </service>
+
+    </services>
+
+</container>

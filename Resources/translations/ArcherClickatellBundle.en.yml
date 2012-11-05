@@ -1,0 +1,10 @@
+message:
+  to: To
+  message: Message
+statistic:
+  email: User Id or Email
+  recepient: Recepient
+  Select timeframe: Select timeframe
+  starttypingin: Start typing in
+addfromphone:
+  fromphone: Tel Number
