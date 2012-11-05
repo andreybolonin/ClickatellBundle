@@ -39,7 +39,7 @@ Add ArcherClickatellBundle in your composer.json:
 ```js
 {
     "require": {
-        "archer/clickatell-bundle": "*"
+        "archer/clickatell-bundle": "dev-master"
     }
 }
 ```
