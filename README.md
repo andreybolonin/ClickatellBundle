@@ -5,8 +5,7 @@ Getting Started With ClickatellBundle
 
 ## Prerequisites
 
-This version of the bundle requires Symfony 2.1+. If you are using Symfony
-2.0.x, please use the 1.2.x releases of the bundle.
+This version of the bundle requires Symfony 2.1+
 
 ### Translations
 
@@ -69,7 +68,7 @@ public function registerBundles()
 }
 ```
 
-### Step 3: Create your User class
+### Step 3: Create your Message class
 
 The goal of this bundle is to persist some `Message` class to a database (MySql,
 MongoDB, CouchDB, etc).
@@ -80,32 +79,19 @@ to make it easier to create your entity. Here is how you use it:
 1. Extend the base `Message` class (the class to use depends of your storage)
 2. Map the `id` field. It must be protected as it is inherited from the parent class.
 
-**Warning:**
-
-> When you extend from the mapped superclass provided by the bundle, don't
-> redefine the mapping for the other fields as it is provided by the bundle.
-
-In the following sections, you'll see examples of how your `Message` class should
-look, depending on how you're storing your users (Doctrine ORM, MongoDB ODM,
-or CouchDB ODM).
-
-Your `Message` class can live inside any bundle in your application. For example,
-if you work at "Acme" company, then you might create a bundle called `AcmeMessageBundle`
-and place your `Message` class in it.
-
 **Note:**
 
 > The doc uses a bundle named `AcmeMessageBundle`. If you want to use the same
 > name, you need to register it in your kernel. But you can of course place
-> your user class in the bundle you want.
+> your Message class in the bundle you want.
 
 **Warning:**
 
-> If you override the __construct() method in your User class, be sure
-> to call parent::__construct(), as the base User class depends on
+> If you override the __construct() method in your Message class, be sure
+> to call parent::__construct(), as the base Message class depends on
 > this to initialize some fields.
 
-**a) Doctrine ORM User class**
+**a) Doctrine ORM Message class**
 
 If you're persisting your message via the Doctrine ORM, then your `message` class
 should live in the `Entity` namespace of your bundle and look like this to
@@ -113,7 +99,7 @@ start:
 
 ``` php
 <?php
-// src/Acme/MessageBundle/Entity/User.php
+// src/Acme/MessageBundle/Entity/Message.php
 
 namespace Acme\MessageBundle\Entity;
 
@@ -124,7 +110,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="clickatell_message")
  */
-class User extends BaseMessage
+class Message extends BaseMessage
 {
     /**
      * @ORM\Id
@@ -152,7 +138,7 @@ of datastore you are using.
 
 ``` yaml
 # app/config/config.yml
-fos_user:
+archer_clickatell:
     user:                 ~ # your username for clickatell
     password:             ~ # your password for clickatell
     api_id:               ~ # your id for clickatell
@@ -164,8 +150,7 @@ fos_user:
 # app/config/config.xml
 <!-- app/config/config.xml -->
 
-<!-- other valid 'db-driver' values are 'mongodb' and 'couchdb' -->
-<fos_user:config
+<archer_clickatell:config
     user="username"
     password="password"
     api-id="api_id"
