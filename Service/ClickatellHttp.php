@@ -25,7 +25,7 @@ class ClickatellHttp {
 
     /**
      *
-     * @var string
+     * @var int
      */
     private $_concat = 1;
 

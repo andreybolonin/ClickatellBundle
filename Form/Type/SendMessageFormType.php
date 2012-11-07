@@ -16,7 +16,7 @@ class SendMessageFormType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-                ->add('toPhone', 'integer', array('label' => 'message.to', 'translation_domain' => 'ArcherClickatellBundle'))
+                ->add('toPhone', 'text', array('label' => 'message.to', 'translation_domain' => 'ArcherClickatellBundle'))
                 ->add('text', 'textarea', array('label' => 'message.message', 'translation_domain' => 'ArcherClickatellBundle'));
     }
 
