@@ -23,7 +23,7 @@ For more information about translations, check [Symfony documentation](http://sy
 
 ## Installation
 
-Installation is a quick (I promise!) 7 step process:
+Installation is a quick 5 step process:
 
 1. Download ArcherClickatellBundle using composer
 2. Enable the Bundle
