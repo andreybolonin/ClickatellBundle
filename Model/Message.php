@@ -3,12 +3,12 @@
 namespace Archer\ClickatellBundle\Model;
 
 /**
- * Description of Message
+ * Description of Message.
  *
  * @author andrey
  */
-abstract class Message implements MessageInterface {
-
+abstract class Message implements MessageInterface
+{
     /**
      * @var string
      */
@@ -54,7 +54,8 @@ abstract class Message implements MessageInterface {
      */
     protected $toPhone;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->createdAt = new \DateTime();
         $this->incoming = 0;
         $this->status = 0;
@@ -62,94 +63,111 @@ abstract class Message implements MessageInterface {
         $this->apiMsgId = md5(uniqid());
     }
 
-    public function setApiMsgId($apiMsgId) {
+    public function setApiMsgId($apiMsgId)
+    {
         $this->apiMsgId = $apiMsgId;
 
         return $this;
     }
 
-    public function getApiMsgId() {
+    public function getApiMsgId()
+    {
         return $this->apiMsgId;
     }
 
-    public function setCliMsgId($cliMsgId) {
+    public function setCliMsgId($cliMsgId)
+    {
         $this->cliMsgId = $cliMsgId;
 
         return $this;
     }
 
-    public function getCliMsgId() {
+    public function getCliMsgId()
+    {
         return $this->cliMsgId;
     }
 
-    public function setCreatedAt(\DateTime $date) {
+    public function setCreatedAt(\DateTime $date)
+    {
         $this->createdAt = $date;
 
         return $this;
     }
 
-    public function getCreatedAt() {
+    public function getCreatedAt()
+    {
         return $this->createdAt;
     }
 
-    public function setFromPhone($phoneNumber) {
+    public function setFromPhone($phoneNumber)
+    {
         $this->fromPhone = $phoneNumber;
 
         return $this;
     }
 
-    public function getFromPhone() {
+    public function getFromPhone()
+    {
         return $this->fromPhone;
     }
 
-    public function setIncoming($incoming) {
+    public function setIncoming($incoming)
+    {
         $this->incoming = $incoming;
 
         return $this;
     }
 
-    public function getIncoming() {
+    public function getIncoming()
+    {
         return $this->incoming;
     }
 
-    public function setStatus($status) {
+    public function setStatus($status)
+    {
         $this->status = $status;
 
         return $this;
     }
 
-    public function getStatus() {
+    public function getStatus()
+    {
         return $this->status;
     }
 
-    public function setText($text) {
+    public function setText($text)
+    {
         $this->text = $text;
 
         return $this;
     }
 
-    public function getText() {
+    public function getText()
+    {
         return $this->text;
     }
 
-    public function setTimestamp($timestamp) {
+    public function setTimestamp($timestamp)
+    {
         $this->timestamp = $timestamp;
 
         return $this;
     }
 
-    public function getTimestamp() {
+    public function getTimestamp()
+    {
         return $this->timestamp;
     }
 
-    public function setToPhone($phoneNumber) {
+    public function setToPhone($phoneNumber)
+    {
         $this->toPhone = $phoneNumber;
 
         return $this;
     }
 
-    public function getToPhone() {
+    public function getToPhone()
+    {
         return $this->toPhone;
     }
-
 }

@@ -3,20 +3,19 @@
 namespace Archer\ClickatellBundle\Model;
 
 /**
- *
  * @author andrey
  */
-interface MessageInterface {
-
+interface MessageInterface
+{
     /**
-     * get Message Text
+     * get Message Text.
      *
      * @return string
      */
     public function getText();
 
     /**
-     * Set Message Text
+     * Set Message Text.
      *
      * @param string $text
      *
@@ -25,14 +24,14 @@ interface MessageInterface {
     public function setText($text);
 
     /**
-     * get Phone To
+     * get Phone To.
      *
      * @return string
      */
     public function getToPhone();
 
     /**
-     * Set Phone To
+     * Set Phone To.
      *
      * @param string $phoneNumber
      *
@@ -41,14 +40,14 @@ interface MessageInterface {
     public function setToPhone($phoneNumber);
 
     /**
-     * get Phone to
+     * get Phone to.
      *
      * @return string Phone From
      */
     public function getFromPhone();
 
     /**
-     * Set Phone From
+     * Set Phone From.
      *
      * @param string $phoneNumber
      *
@@ -57,29 +56,30 @@ interface MessageInterface {
     public function setFromPhone($phoneNumber);
 
     /**
-     * get Api Message Id
+     * get Api Message Id.
      *
      * @return string
      */
     public function getApiMsgId();
 
     /**
-     * Set Api Message Id
+     * Set Api Message Id.
      *
      * @param string $apiMsgId
+     *
      * @return self
      */
     public function setApiMsgId($apiMsgId);
 
     /**
-     * get Client Messge Id
+     * get Client Messge Id.
      *
      * @return string
      */
     public function getCliMsgId();
 
     /**
-     * Set Client Message Id
+     * Set Client Message Id.
      *
      * @param string $cliMsgId
      *
@@ -88,14 +88,14 @@ interface MessageInterface {
     public function setCliMsgId($cliMsgId);
 
     /**
-     * Get Message Status
+     * Get Message Status.
      *
      * @return string
      */
     public function getStatus();
 
     /**
-     * Set Message Status
+     * Set Message Status.
      *
      * @param string $status
      *
@@ -104,14 +104,14 @@ interface MessageInterface {
     public function setStatus($status);
 
     /**
-     * Get Incoming Message
+     * Get Incoming Message.
      *
      * @return int
      */
     public function getIncoming();
 
     /**
-     * Set Message Incoming
+     * Set Message Incoming.
      *
      * @param int $incoming
      *
@@ -120,14 +120,14 @@ interface MessageInterface {
     public function setIncoming($incoming);
 
     /**
-     * Get Timestamp Message
+     * Get Timestamp Message.
      *
      * @return int
      */
     public function getTimestamp();
 
     /**
-     * Set Message Timestamp
+     * Set Message Timestamp.
      *
      * @param int $timestamp
      *
@@ -136,14 +136,14 @@ interface MessageInterface {
     public function setTimestamp($timestamp);
 
     /**
-     * get Created At message
+     * get Created At message.
      *
      * @return \DateTime
      */
     public function getCreatedAt();
 
     /**
-     * set Created At Message
+     * set Created At Message.
      *
      * @param \DateTime $date
      * 

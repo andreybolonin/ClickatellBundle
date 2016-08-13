@@ -7,16 +7,17 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 /**
- * This is the class that validates and merges configuration from your app/config files
+ * This is the class that validates and merges configuration from your app/config files.
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}
  */
-class Configuration implements ConfigurationInterface {
-
+class Configuration implements ConfigurationInterface
+{
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    public function getConfigTreeBuilder() {
+    public function getConfigTreeBuilder()
+    {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('archer_clickatell');
 
@@ -33,7 +34,8 @@ class Configuration implements ConfigurationInterface {
         return $treeBuilder;
     }
 
-    private function addReplyMessageSection(ArrayNodeDefinition $node) {
+    private function addReplyMessageSection(ArrayNodeDefinition $node)
+    {
         $node
                 ->children()
                     ->arrayNode('reply_message')
@@ -55,7 +57,8 @@ class Configuration implements ConfigurationInterface {
                 ->end();
     }
 
-    private function addSendMessageSection(ArrayNodeDefinition $node) {
+    private function addSendMessageSection(ArrayNodeDefinition $node)
+    {
         $node
                 ->children()
                     ->arrayNode('send_message')
@@ -76,5 +79,4 @@ class Configuration implements ConfigurationInterface {
                     ->end()
                 ->end();
     }
-
 }
