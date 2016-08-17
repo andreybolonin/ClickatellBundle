@@ -6,7 +6,7 @@
 
     <services>
 
-        <service id="clickatell.send_message.form" factory-method="createNamed" factory-service="form.factory" class="Symfony\Component\Form\Form">
+        <service id="clickatell.send_message.form" class="Symfony\Component\Form\Form">
             <argument>%clickatell.send_message.form.name%</argument>
             <argument>%clickatell.send_message.form.type%</argument>
             <argument>null</argument>
