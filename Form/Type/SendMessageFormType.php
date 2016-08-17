@@ -3,8 +3,10 @@
 namespace Archer\ClickatellBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SendMessageFormType extends AbstractType
 {
@@ -18,11 +20,17 @@ class SendMessageFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('toPhone', 'text', array('label' => 'message.to', 'translation_domain' => 'ArcherClickatellBundle'))
-                ->add('text', 'textarea', array('label' => 'message.message', 'translation_domain' => 'ArcherClickatellBundle'));
+                ->add('toPhone', TextType::class, array(
+                    'label' => 'message.to',
+                    'translation_domain' => 'ArcherClickatellBundle',
+                ))
+                ->add('text', TextareaType::class, array(
+                    'label' => 'message.message',
+                    'translation_domain' => 'ArcherClickatellBundle',
+                ));
     }
 
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function setDefaultOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => $this->class,
