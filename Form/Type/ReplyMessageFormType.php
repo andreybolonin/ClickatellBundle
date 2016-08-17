@@ -4,7 +4,8 @@ namespace Archer\ClickatellBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * User: andrey
@@ -23,7 +24,7 @@ class ReplyMessageFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('text', 'textarea', array('label' => 'message.message', 'trim' => true, 'translation_domain' => 'ArcherClickatellBundle', 'required' => true, 'attr' => array('maxlength' => 5599, 'class' => 'input-xlarge')));
+            ->add('text', TextareaType::class, array('label' => 'message.message', 'trim' => true, 'translation_domain' => 'ArcherClickatellBundle', 'required' => true, 'attr' => array('maxlength' => 5599, 'class' => 'input-xlarge')));
     }
 
     public function getName()
@@ -31,7 +32,7 @@ class ReplyMessageFormType extends AbstractType
         return 'clickatell_reply_message';
     }
 
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => $this->class,
